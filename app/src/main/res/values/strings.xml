@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">LoginSignupScreen</string>
+    <string name="app_name">Covid-19-tracker</string>
+    <string name="logo_name">Covid-19-tracker</string>
+    <string name="login_heading">Covid-19-tracker</string>
+    <string name="login_tag_line">Blijf op de hoogte van de laatste Covid-19 cijfers</string>
+    <string name="sign_in">Inloggen</string>
+    <string name="sign_up">Aanmelden</string>
+    <string name="how_does_it_work">Hoe werkt het?</string>
 </resources>
