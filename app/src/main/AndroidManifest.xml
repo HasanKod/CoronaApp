@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginSignupScreen">
         <activity
+            android:name=".Common.LoginSignup.Login"
+            android:exported="true" />
+        <activity
             android:name=".Common.LoginSignup.StartupScreen"
             android:exported="true">
             <intent-filter>
