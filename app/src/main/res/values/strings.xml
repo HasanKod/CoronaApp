@@ -1,24 +1,44 @@
 <resources>
+
+    <!-- General Screen -->
     <string name="app_name">Covid-19-tracker</string>
     <string name="logo_name">Covid-19-tracker</string>
     <string name="login_heading">Covid-19-tracker</string>
+
+    <!-- Startup Screen -->
     <string name="login_tag_line">Blijf op de hoogte van de laatste Covid-19 cijfers</string>
     <string name="login">Inloggen</string>
     <string name="sign_up">Aanmelden</string>
     <string name="how_does_it_work">Hoe werkt het?</string>
-    <string name="enter_username">Gebruikersnaam</string>
-    <string name="enter_password">Wachtwoord</string>
+
+    <!-- Lognin Screen -->
     <string name="remember_me">Onthoud me</string>
     <string name="forget_password">Wachtwoord vergeten</string>
+
+    <!-- Signup Screen -->
     <string name="create_account">Maak een account aan</string>
+
+    <!-- Field Strings -->
+    <string name="enter_username">Gebruikersnaam</string>
+    <string name="enter_password">Wachtwoord</string>
     <string name="enter_full_name">Volledige naam</string>
     <string name="enter_email">Email</string>
     <string name="enter_phone_number">Telefoonnummer</string>
-    <string name="next_btn">Volgende</string>
     <string name="choose_gender">Geslacht</string>
     <string name="male">Man</string>
     <string name="female">Vrouw</string>
     <string name="other_gender">Andere</string>
     <string name="rather_not_say">Liever niet zeggen</string>
     <string name="select_your_age">Leeftijd</string>
+
+    <!-- Button Strings -->
+    <string name="next_btn">Volgende</string>
+
+    <!-- OTP Screen -->
+    <string name="otp_code_text">Co\nde</string>
+    <string name="otp_verification_text">Verificatie</string>
+    <string name="otp_description_text">Voer eenmalig wachtwoord in verzonden op\n+9458</string>
+    <string name="verift_code">Code verifiëren</string>
+
+
 </resources>

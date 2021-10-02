@@ -12,5 +12,7 @@
     <color name="black">#FF000000</color>
     <color name="gray">#A19292</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="lightwhite">#FAFAFA</color>
+
 
 </resources>

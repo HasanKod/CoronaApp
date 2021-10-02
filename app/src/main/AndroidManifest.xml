@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginSignupScreen">
         <activity
+            android:name=".Common.LoginSignup.VerifyOTP"
+            android:exported="true" />
+        <activity
             android:name=".Common.LoginSignup.SignUp3rdClass"
             android:exported="true" />
         <activity

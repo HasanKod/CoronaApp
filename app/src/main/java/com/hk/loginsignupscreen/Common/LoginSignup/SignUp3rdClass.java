@@ -33,7 +33,7 @@ public class SignUp3rdClass extends AppCompatActivity {
 
     public void callNextSignupScreen(View view) {
 
-        Intent intent = new Intent(getApplicationContext(), SignUp3rdClass.class);
+        Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
 
         //Add transition
         //Number of elements we want to animate
