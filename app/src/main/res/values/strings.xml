@@ -11,4 +11,8 @@
     <string name="remember_me">Onthoud me</string>
     <string name="forget_password">Wachtwoord vergeten</string>
     <string name="create_account">Maak een account aan</string>
+    <string name="enter_full_name">Voer je volledige naam in</string>
+    <string name="enter_email">Voer je email in</string>
+    <string name="enter_phone_number">Voer je telefoonnummer in</string>
+    <string name="next_btn">Volgende</string>
 </resources>

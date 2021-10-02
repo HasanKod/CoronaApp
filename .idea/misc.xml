@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HaSaN/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/HaSaN/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/HaSaN/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/activity_signup.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/HaSaN/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/activity_startup_screen.xml" value="0.35916134913400183" />
       </map>
     </option>
