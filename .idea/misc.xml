@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/HaSaN/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/HaSaN/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/activity_startup_screen.xml" value="0.32840236686390534" />
+        <entry key="..\:/Users/HaSaN/AndroidStudioProjects/CoronaApp/app/src/main/res/layout/activity_startup_screen.xml" value="0.35916134913400183" />
       </map>
     </option>
   </component>
@@ -13,5 +13,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>
