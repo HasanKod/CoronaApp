@@ -34,7 +34,7 @@ public class SignUp2ndClass extends AppCompatActivity {
 
     public void callNextSignupScreen(View view) {
 
-        Intent intent = new Intent(getApplicationContext(), SignUp2ndClass.class);
+        Intent intent = new Intent(getApplicationContext(), SignUp3rdClass.class);
 
         //Add transition
         //Number of elements we want to animate
