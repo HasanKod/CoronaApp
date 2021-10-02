@@ -23,7 +23,7 @@
 
 
         <TextView
-            android:id="@+id/transition_title_text"
+            android:id="@+id/signup_title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_account"
@@ -162,7 +162,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/transition_next_btn"
+            android:id="@+id/signup_next_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/next_btn"
@@ -170,10 +170,11 @@
             android:layout_marginTop="20dp"
             android:textColor="@color/white"
             android:elevation="5dp"
-            android:transitionName="transition_next_btn"/>
+            android:transitionName="transition_next_btn"
+            android:onClick="callNextSignupScreen"/>
 
         <Button
-            android:id="@+id/transition_login_btn"
+            android:id="@+id/signup_login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/login"

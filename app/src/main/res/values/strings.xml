@@ -15,4 +15,10 @@
     <string name="enter_email">Voer je email in</string>
     <string name="enter_phone_number">Voer je telefoonnummer in</string>
     <string name="next_btn">Volgende</string>
+    <string name="choose_gender">Kies geslacht</string>
+    <string name="male">Man</string>
+    <string name="female">Vrouw</string>
+    <string name="other_gender">Andere</string>
+    <string name="rather_not_say">Liever niet zeggen</string>
+    <string name="select_your_age">Selecteer je leeftijd</string>
 </resources>

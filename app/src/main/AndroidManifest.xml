@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginSignupScreen">
         <activity
+            android:name=".Common.LoginSignup.SignUp2ndClass"
+            android:exported="true" />
+        <activity
             android:name=".Common.LoginSignup.SignUp"
             android:exported="true" />
         <activity
