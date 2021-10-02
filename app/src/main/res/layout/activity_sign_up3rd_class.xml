@@ -37,11 +37,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="90dp"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/brandon_blk"
+                android:text="@string/enter_phone_number"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
 
             <com.hbb20.CountryCodePicker
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/black_border"
@@ -75,31 +84,38 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/signup_next_btn"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
-            android:elevation="5dp"
-            android:onClick="callNextSignupScreen"
-            android:text="@string/next_btn"
-            android:textColor="@color/white"
-            android:transitionName="transition_next_btn"
-            tools:ignore="TextContrastCheck" />
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/signup_login_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#00000000"
-            android:elevation="5dp"
-            android:fontFamily="@font/brandon_med"
-            android:text="@string/login"
-            android:textColor="@color/black"
-            android:transitionName="transition_login_btn" />
+            <Button
+                android:id="@+id/signup_next_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:elevation="5dp"
+                android:onClick="callNextSignupScreen"
+                android:text="@string/next_btn"
+                android:textColor="@color/white"
+                android:transitionName="transition_next_btn"
+                tools:ignore="TextContrastCheck"
+                android:fontFamily="@font/brandon_blk"/>
+
+            <Button
+                android:id="@+id/signup_login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#00000000"
+                android:elevation="5dp"
+                android:fontFamily="@font/brandon_med"
+                android:text="@string/login"
+                android:textColor="@color/black"
+                android:transitionName="transition_login_btn"/>
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>
