@@ -152,7 +152,7 @@
             android:background="@color/colorPrimary"
             android:elevation="5dp"
             android:fontFamily="@font/brandon_blk"
-            android:onClick="callNextSignupScreen"
+            android:onClick="call2ndSignupScreen"
             android:text="@string/next_btn"
             android:textColor="@color/white"
             android:transitionName="transition_next_btn" />

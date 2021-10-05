@@ -50,6 +50,7 @@
                 android:textSize="18sp" />
 
             <RadioGroup
+                android:id="@+id/radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -57,7 +58,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/brandon_med"
@@ -65,7 +66,7 @@
                     android:text="@string/male" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/brandon_med"
@@ -73,7 +74,7 @@
                     android:text="@string/female" />
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/other_gender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/brandon_med"
@@ -88,7 +89,6 @@
                 android:layout_marginBottom="20dp"
                 android:background="@color/black" />
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,6 +98,7 @@
                 android:textSize="18sp" />
 
             <DatePicker
+                android:id="@+id/date_picker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:calendarViewShown="false"
@@ -114,7 +115,7 @@
             android:background="@color/colorPrimary"
             android:elevation="5dp"
             android:fontFamily="@font/brandon_blk"
-            android:onClick="callNextSignupScreen"
+            android:onClick="call3rdSignupScreen"
             android:text="@string/next_btn"
             android:textColor="@color/white"
             android:transitionName="transition_next_btn"

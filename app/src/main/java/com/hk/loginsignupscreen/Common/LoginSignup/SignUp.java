@@ -44,7 +44,7 @@ public class SignUp extends AppCompatActivity {
         password = findViewById(R.id.signup_password);
     }
 
-    public void callNextSignupScreen(View view) {
+    public void call2ndSignupScreen(View view) {
 
         if (!validateFullName() | !validateUserName() | !validateEmail() | !validatePassword()) {
             return;

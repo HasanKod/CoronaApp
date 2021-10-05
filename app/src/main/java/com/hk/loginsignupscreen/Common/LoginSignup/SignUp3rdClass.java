@@ -31,7 +31,7 @@ public class SignUp3rdClass extends AppCompatActivity {
         titleText = findViewById(R.id.signup_title_text);
     }
 
-    public void callNextSignupScreen(View view) {
+    public void callVerificationScreen(View view) {
 
         Intent intent = new Intent(getApplicationContext(), VerifyOTP.class);
 
