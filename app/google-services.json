@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "598305014845",
+    "project_id": "covid-19-tracker-2e278",
+    "storage_bucket": "covid-19-tracker-2e278.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598305014845:android:22e068119ee5e754499654",
+        "android_client_info": {
+          "package_name": "com.hk.loginsignupscreen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598305014845-ub3oohh726eu46hu6rtvumq1qbtekjqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLHGo9v_Sqmp636Ixb7c4McYT7J0IKEvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598305014845-ub3oohh726eu46hu6rtvumq1qbtekjqv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
