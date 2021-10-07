@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:598305014845:android:891efb420195c0ac499654",
+        "android_client_info": {
+          "package_name": "com.example.covid19tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "598305014845-ub3oohh726eu46hu6rtvumq1qbtekjqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLHGo9v_Sqmp636Ixb7c4McYT7J0IKEvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "598305014845-ub3oohh726eu46hu6rtvumq1qbtekjqv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:598305014845:android:22e068119ee5e754499654",
         "android_client_info": {
           "package_name": "com.hk.loginsignupscreen"

@@ -58,6 +58,7 @@
 
 
         <com.chaos.view.PinView
+            android:id="@+id/pin_view"
             style="@style/PinWidget.PinView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,6 +81,7 @@
             android:layout_marginTop="30dp"
             android:background="@color/colorPrimary"
             android:fontFamily="@font/brandon_blk"
+            android:onClick="callNextScreenFromOTP"
             android:text="@string/verift_code"
             android:textColor="@color/white" />
 

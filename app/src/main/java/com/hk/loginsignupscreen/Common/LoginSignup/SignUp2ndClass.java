@@ -66,6 +66,10 @@ public class SignUp2ndClass extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(), SignUp3rdClass.class);
 
+        //Pass all fields to the next activity
+        intent.putExtra("date", _date);
+        intent.putExtra("gender", _gender);
+
         //Add transition
         //Number of elements we want to animate
         Pair[] pairs = new Pair[4];
