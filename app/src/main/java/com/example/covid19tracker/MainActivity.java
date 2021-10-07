@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
     CountryCodePicker countryCodePicker;
-    TextView mtodaytotal, mtotal, mactive, mtodayactive, mrecovered, mtodayrecovered, mdeaths, mtodaydeaths;
+    TextView mtodaytotal, mtotal, mactive, mrecovered, mtodayrecovered, mdeaths, mtodaydeaths;
 
     String country;
     TextView mfilter;
@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         countryCodePicker=findViewById(R.id.ccp);
-        mtodayactive=findViewById(R.id.todayactive);
         mactive=findViewById(R.id.activecase);
         mdeaths=findViewById(R.id.totaldeath);
         mtodaydeaths=findViewById(R.id.todaydeath);
@@ -91,7 +90,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
 
-        countryCodePicker.setAutoDetectedCountry(true);
+        countryCodePicker.setDefaultCountryUsingNameCode("NL");
+        countryCodePicker.resetToDefaultCountry();
         country=countryCodePicker.getSelectedCountryName();
         countryCodePicker.setOnCountryChangeListener(new CountryCodePicker.OnCountryChangeListener() {
             @Override

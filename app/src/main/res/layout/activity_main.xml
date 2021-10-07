@@ -45,7 +45,7 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/country_code_drawable"
                     android:padding="5dp"
-                    app:ccp_autoDetectCountry="true"
+                    app:ccp_autoDetectCountry="false"
                     app:ccp_showFullName="false"
                     app:ccp_showPhoneCode="false"
                     app:ccp_textSize="12sp">
@@ -375,19 +375,6 @@
                             android:text="@string/number"
                             android:textColor="@color/black"
                             android:textSize="12sp"
-                            android:textStyle="bold">
-
-                        </TextView>
-
-                        <TextView
-                            android:id="@+id/todayactive"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_weight="1"
-                            android:text="@string/increment_number"
-                            android:textColor="@color/green"
-                            android:textSize="10sp"
                             android:textStyle="bold">
 
                         </TextView>
