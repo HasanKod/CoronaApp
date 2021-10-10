@@ -31,38 +31,55 @@
             android:textColor="@color/black"
             android:textSize="40sp" />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:orientation="vertical">
+            android:layout_marginTop="80dp">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/login_country_code_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/black_border"
+                android:padding="8dp"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_hintExampleNumberType="MOBILE"
+                app:ccp_showFullName="true" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_phone_number"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_username"
+                android:layout_below="@id/login_country_code_picker"
+                android:hint="@string/enter_phone_number"
+                android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
-                app:startIconDrawable="@drawable/username_field_icon"
+                app:startIconDrawable="@drawable/phone_number_field_icon"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/brandon_reg"
-                    android:inputType="text"
-                    android:textColor="@color/black" />
+                    android:inputType="phone">
 
+
+                </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/login_phone_number"
                 android:hint="@string/enter_password"
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
@@ -82,8 +99,10 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <RelativeLayout
+                android:id="@+id/remember_me_block"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/login_password"
                 android:layout_marginTop="10dp">
 
                 <CheckBox
@@ -92,9 +111,9 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:buttonTint="@color/black"
+                    android:fontFamily="@font/brandon_med"
                     android:text="@string/remember_me"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/brandon_med"/>
+                    android:textColor="@color/black" />
 
 
                 <Button
@@ -103,30 +122,50 @@
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:background="#00000000"
-                    android:text="@string/forget_password"
-                    android:fontFamily="@font/brandon_med"/>
+                    android:fontFamily="@font/brandon_med"
+                    android:text="@string/forget_password" />
 
             </RelativeLayout>
 
             <Button
+                android:id="@+id/letTheUserLogIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/remember_me_block"
                 android:layout_marginTop="20dp"
                 android:background="@color/colorPrimary"
+                android:fontFamily="@font/brandon_blk"
                 android:text="@string/login"
-                android:textColor="@color/white"
-                android:fontFamily="@font/brandon_blk"/>
+                android:textColor="@color/white" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_below="@id/letTheUserLogIn"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:background="#00000000"
-                android:text="@string/create_account"
-                android:fontFamily="@font/brandon_med"/>
+                android:fontFamily="@font/brandon_med"
+                android:text="@string/create_account" />
 
-        </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/white_circle"
+                android:padding="20dp">
+
+                <ProgressBar
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:elevation="8dp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
 
 
     </LinearLayout>
