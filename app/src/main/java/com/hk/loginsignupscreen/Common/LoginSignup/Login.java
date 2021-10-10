@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,11 +12,15 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,7 +28,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
+import com.hk.loginsignupscreen.Common.Dashboard;
+import com.hk.loginsignupscreen.Databases.SessionManager;
 import com.hk.loginsignupscreen.R;
+
+import java.util.HashMap;
 
 public class Login extends AppCompatActivity {
 
@@ -31,6 +40,10 @@ public class Login extends AppCompatActivity {
     CountryCodePicker countryCodePicker;
     TextInputLayout phoneNumber, password;
     RelativeLayout progressbar;
+    CheckBox rememberMe;
+    TextInputEditText phoneNumberEditText, passwordEditText;
+    Button signup_btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +55,19 @@ public class Login extends AppCompatActivity {
         phoneNumber = findViewById(R.id.login_phone_number);
         password = findViewById(R.id.login_password);
         progressbar = findViewById(R.id.login_progress_bar);
+        rememberMe = findViewById(R.id.remember_me);
+        phoneNumberEditText = findViewById(R.id.login_phone_number_edit_text);
+        passwordEditText = findViewById(R.id.login_password_edit_text);
+        signup_btn = findViewById(R.id.signup_btn);
+
+        //Check whether phone number and password are already stored in shared preferences or not
+        SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_REMEMBERME);
+        if (sessionManager.checkRememberMe()) {
+            HashMap<String, String> rememberMeDetails = sessionManager.getRememberMeDetailsFromSession();
+            phoneNumberEditText.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPHONENUMBER));
+            passwordEditText.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPASSWORD));
+        }
+
     }
 
     public void letTheUserLogin(View view) {
@@ -59,7 +85,7 @@ public class Login extends AppCompatActivity {
         progressbar.setVisibility(View.VISIBLE);
         //Get data
         String _phoneNumber = phoneNumber.getEditText().getText().toString().trim();
-        String _password = password.getEditText().getText().toString().trim();
+        final String _password = password.getEditText().getText().toString().trim();
 
         //If the user enters 0 at the beginning of the phone number, the 0 will be deleted automatically
         if (_phoneNumber.charAt(0) == '0') {
@@ -67,9 +93,15 @@ public class Login extends AppCompatActivity {
         }
 
         //Add the country code to the phone number
-        String _completePhoneNumber = "+" + countryCodePicker.getSelectedCountryCode() + _phoneNumber;
+        final String _completePhoneNumber = "+" + countryCodePicker.getSelectedCountryCode() + _phoneNumber;
 
-        //Database
+        //Check whether Remember me is checked and create a session if it is
+        if (rememberMe.isChecked()) {
+            SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_REMEMBERME);
+            sessionManager.createRememberMeSession(_phoneNumber, _password);
+        }
+
+        //Check whether the user exists in the database or not
         Query checkUser = FirebaseDatabase.getInstance("https://covid-19-tracker-2e278-default-rtdb.europe-west1.firebasedatabase.app").getReference("Users").orderByChild("phoneNo").equalTo(_completePhoneNumber);
 
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -96,6 +128,13 @@ public class Login extends AppCompatActivity {
                         String _username = snapshot.child(_completePhoneNumber).child("username").getValue(String.class);
                         String _password = snapshot.child(_completePhoneNumber).child("password").getValue(String.class);
                         String _gender = snapshot.child(_completePhoneNumber).child("gender").getValue(String.class);
+
+                        //Create a session
+                        SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_USERSESSION);
+                        sessionManager.creatLoginSession(_fullname, _username, _email, _phoneNo, _password, _dateOfBirth, _gender);
+
+                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
+
 
                         Toast.makeText(Login.this, _fullname + "\n" + _email + "\n" + _phoneNo + "\n" + _dateOfBirth, Toast.LENGTH_SHORT).show();
 
@@ -169,5 +208,23 @@ public class Login extends AppCompatActivity {
         } else {
             return true;
         }
+    }
+
+    public void callSignUpScreen(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), SignUp.class);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[1];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(signup_btn, "transition_login");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this, pairs);
+        startActivity(intent, options.toBundle());
+
     }
 }
