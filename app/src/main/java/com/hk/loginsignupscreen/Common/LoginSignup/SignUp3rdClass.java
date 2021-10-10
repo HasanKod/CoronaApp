@@ -38,9 +38,9 @@ public class SignUp3rdClass extends AppCompatActivity {
     public void callVerifyOTPScreen(View view) {
 
         //Validate fields
-//        if (!validatePhoneNumber()) {
-//            return;
-//        }
+        if (!validatePhoneNumber()) {
+            return;
+        }
 
         //When validation succeeded, move to next screen to verify phone number and save data
 
@@ -85,6 +85,13 @@ public class SignUp3rdClass extends AppCompatActivity {
     }
 
     private boolean validatePhoneNumber() {
-        return true;
+        String _phoneNumber = phoneNumber.getEditText().getText().toString().trim();
+        if (_phoneNumber.isEmpty()) {
+            phoneNumber.setError("Telefoonnummer mag niet leeg zijn!");
+            phoneNumber.requestFocus();
+            return false;
+        } else {
+            return true;
+        }
     }
 }
