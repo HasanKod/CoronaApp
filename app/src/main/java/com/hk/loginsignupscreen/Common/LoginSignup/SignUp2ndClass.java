@@ -53,6 +53,12 @@ public class SignUp2ndClass extends AppCompatActivity {
             return;
         }
 
+        //Get all values passed from previous screens using Intent
+        String _fullName = getIntent().getStringExtra("fullName");
+        String _email = getIntent().getStringExtra("email");
+        String _username = getIntent().getStringExtra("username");
+        String _password = getIntent().getStringExtra("password");
+
         //return the id of the selected radio button
         selectedGender = findViewById(radioGroup.getCheckedRadioButtonId());
 
@@ -67,8 +73,13 @@ public class SignUp2ndClass extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), SignUp3rdClass.class);
 
         //Pass all fields to the next activity
+        intent.putExtra("fullName", _fullName);
+        intent.putExtra("email", _email);
+        intent.putExtra("username", _username);
+        intent.putExtra("password", _password);
         intent.putExtra("date", _date);
         intent.putExtra("gender", _gender);
+
 
         //Add transition
         //Number of elements we want to animate

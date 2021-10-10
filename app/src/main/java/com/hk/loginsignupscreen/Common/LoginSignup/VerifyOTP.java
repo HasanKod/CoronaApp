@@ -23,6 +23,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.hk.loginsignupscreen.Databases.UserHelperClass;
 import com.hk.loginsignupscreen.R;
 
 import java.util.concurrent.TimeUnit;
@@ -32,6 +35,7 @@ public class VerifyOTP extends AppCompatActivity {
     //Variables
     PinView pinFormUser;
     String codeBySystem;
+    String fullName, email, username, password, date, gender, phoneNo;
 //    private FirebaseAuth mAuth;
 
 
@@ -44,9 +48,17 @@ public class VerifyOTP extends AppCompatActivity {
         //Hooks
         pinFormUser = findViewById(R.id.pin_view);
 //        FirebaseUser currentUser = mAuth.getCurrentUser();
-        String _phoneNo = getIntent().getStringExtra("phoneNo");
 
-        sendVerificationCodeToUser(_phoneNo);
+        //Get all values passed from previous screens using Intent
+        fullName = getIntent().getStringExtra("fullName");
+        email = getIntent().getStringExtra("email");
+        username = getIntent().getStringExtra("username");
+        password = getIntent().getStringExtra("password");
+        date = getIntent().getStringExtra("date");
+        gender = getIntent().getStringExtra("gender");
+        phoneNo = getIntent().getStringExtra("phoneNo");
+
+        sendVerificationCodeToUser(phoneNo);
 
     }
 
@@ -103,7 +115,8 @@ public class VerifyOTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Toast.makeText(VerifyOTP.this, "Verificatie voltooid!", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(VerifyOTP.this, "Verificatie voltooid!", Toast.LENGTH_SHORT).show();
+                            storeNewUsersData();
                         } else {
                             // Sign in failed, display a message and update the UI
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
@@ -113,6 +126,18 @@ public class VerifyOTP extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void storeNewUsersData() {
+        // Write a message to the database
+        FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://covid-19-tracker-2e278-default-rtdb.europe-west1.firebasedatabase.app");
+        //point to the reference "Users" inside the database (reference = table)
+        DatabaseReference reference = rootNode.getReference("Users");
+
+        UserHelperClass addNewUser = new UserHelperClass(fullName, email, username, password, date, gender, phoneNo);
+
+        //all the values passed are going to be stored inside the child, whit phone number as id of the user
+        reference.child(phoneNo).setValue(addNewUser);
     }
 
     public void callNextScreenFromOTP(View view) {

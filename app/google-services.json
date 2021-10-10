@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "598305014845",
+    "firebase_url": "https://covid-19-tracker-2e278-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "covid-19-tracker-2e278",
     "storage_bucket": "covid-19-tracker-2e278.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "598305014845-vhd1lv2bfndat9rh06oa50a05dlt5qgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.covid19tracker",
+            "certificate_hash": "466b4fa6ff5370151eea6c1039514cb4557e9912"
+          }
+        },
         {
           "client_id": "598305014845-ub3oohh726eu46hu6rtvumq1qbtekjqv.apps.googleusercontent.com",
           "client_type": 3
@@ -42,6 +51,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "598305014845-g32lf09taroliusr0f3scs6ge46krte5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hk.loginsignupscreen",
+            "certificate_hash": "466b4fa6ff5370151eea6c1039514cb4557e9912"
+          }
+        },
         {
           "client_id": "598305014845-ub3oohh726eu46hu6rtvumq1qbtekjqv.apps.googleusercontent.com",
           "client_type": 3

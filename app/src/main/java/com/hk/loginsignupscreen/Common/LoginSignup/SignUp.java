@@ -48,27 +48,39 @@ public class SignUp extends AppCompatActivity {
 
         if (!validateFullName() | !validateUserName() | !validateEmail() | !validatePassword()) {
             return;
-        } else {
-
-            Intent intent = new Intent(getApplicationContext(), SignUp2ndClass.class);
-
-            //Add transition
-            //Number of elements we want to animate
-            Pair[] pairs = new Pair[4];
-
-            // View: the element in the xml (image, text, anything..)
-            // String: the name of the transition
-            pairs[0] = new Pair<View, String>(backBtn, "transition_back_btn");
-            pairs[1] = new Pair<View, String>(next, "transition_next_btn");
-            pairs[2] = new Pair<View, String>(login, "transition_login_btn");
-            pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
-
-            //Call the next activity and add the transition to it
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
-            startActivity(intent, options.toBundle());
-
         }
+
+        //Get all values entered
+        String _fullName = fullname.getEditText().getText().toString().trim();
+        String _email = email.getEditText().getText().toString().trim();
+        String _username = username.getEditText().getText().toString().trim();
+        String _password = password.getEditText().getText().toString().trim();
+
+        Intent intent = new Intent(getApplicationContext(), SignUp2ndClass.class);
+
+        //Pass all fields to the next activity
+        intent.putExtra("fullName", _fullName);
+        intent.putExtra("email", _email);
+        intent.putExtra("username", _username);
+        intent.putExtra("password", _password);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[4];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(backBtn, "transition_back_btn");
+        pairs[1] = new Pair<View, String>(next, "transition_next_btn");
+        pairs[2] = new Pair<View, String>(login, "transition_login_btn");
+        pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
+        startActivity(intent, options.toBundle());
+
     }
+
 
     //Validation Functions
 
