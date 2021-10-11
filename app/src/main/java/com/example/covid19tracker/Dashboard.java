@@ -17,7 +17,6 @@ import com.hbb20.CountryCodePicker;
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +24,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Dashboard extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
     CountryCodePicker countryCodePicker;
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dashboard);
         getSupportActionBar().hide();
         countryCodePicker=findViewById(R.id.ccp);
         mactive=findViewById(R.id.activecase);
