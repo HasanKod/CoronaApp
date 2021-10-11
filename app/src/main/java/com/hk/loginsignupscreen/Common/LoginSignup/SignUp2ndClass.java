@@ -122,4 +122,39 @@ public class SignUp2ndClass extends AppCompatActivity {
             return true;
         }
     }
+
+    public void callLoginScreen(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[1];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(login, "transition_login");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2ndClass.this, pairs);
+        startActivity(intent, options.toBundle());
+
+    }
+
+    public void callSignUpScreen(View view) {
+        Intent intent = new Intent(getApplicationContext(), SignUp.class);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[1];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(backBtn, "transition_back_btn");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2ndClass.this, pairs);
+        startActivity(intent, options.toBundle());
+
+    }
 }

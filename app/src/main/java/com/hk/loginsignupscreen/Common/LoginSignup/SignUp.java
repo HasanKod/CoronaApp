@@ -37,6 +37,7 @@ public class SignUp extends AppCompatActivity {
         login = findViewById(R.id.signup_login_btn);
         titleText = findViewById(R.id.signup_title_text);
 
+
         //Hooks for getting data
         fullname = findViewById(R.id.signup_fullname);
         username = findViewById(R.id.signup_username);
@@ -171,5 +172,39 @@ public class SignUp extends AppCompatActivity {
 
     }
 
+    public void callLoginScreen(View view) {
 
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[1];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(login, "transition_login");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
+        startActivity(intent, options.toBundle());
+
+    }
+
+    public void callStartUpScreen(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), StartupScreen.class);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[1];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(backBtn, "transition_back_btn");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
+        startActivity(intent, options.toBundle());
+
+    }
 }

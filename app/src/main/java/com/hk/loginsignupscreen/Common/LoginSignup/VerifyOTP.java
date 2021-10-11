@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.arch.core.executor.TaskExecutor;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.chaos.view.PinView;
@@ -33,6 +36,7 @@ import java.util.concurrent.TimeUnit;
 public class VerifyOTP extends AppCompatActivity {
 
     //Variables
+    ImageView closeBtn;
     PinView pinFormUser;
     String codeBySystem;
     String fullName, email, username, password, date, gender, phoneNo;
@@ -47,6 +51,8 @@ public class VerifyOTP extends AppCompatActivity {
 
         //Hooks
         pinFormUser = findViewById(R.id.pin_view);
+        closeBtn = findViewById(R.id.close_btn);
+
 //        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         //Get all values passed from previous screens using Intent
@@ -145,5 +151,22 @@ public class VerifyOTP extends AppCompatActivity {
         if (!code.isEmpty()) {
             verifyCode(code);
         }
+    }
+
+    public void call3rdSignupScreen(View view) {
+        Intent intent = new Intent(getApplicationContext(), SignUp3rdClass.class);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[1];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(closeBtn, "close_btn_transition");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(VerifyOTP.this, pairs);
+        startActivity(intent, options.toBundle());
+
     }
 }

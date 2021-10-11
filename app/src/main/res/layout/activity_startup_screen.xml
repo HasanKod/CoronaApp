@@ -77,15 +77,15 @@
 
         </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:background="#00000000"
-            android:fontFamily="@font/brandon_med"
-            android:text="@string/how_does_it_work"
-            android:textColor="@color/black"
-            tools:ignore="TextContrastCheck" />
+        <!--        <Button-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:background="#00000000"-->
+        <!--            android:fontFamily="@font/brandon_med"-->
+        <!--            android:text="@string/how_does_it_work"-->
+        <!--            android:textColor="@color/black"-->
+        <!--            tools:ignore="TextContrastCheck" />-->
     </LinearLayout>
 </ScrollView>

@@ -18,8 +18,10 @@
             android:id="@+id/login_back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="callStartUpScreen"
             android:padding="5dp"
-            android:src="@drawable/general_back_icon" />
+            android:src="@drawable/general_back_icon"
+            android:transitionName="login_back_button_transition" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,9 +45,10 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/black_border"
                 android:padding="8dp"
-                app:ccp_autoDetectCountry="true"
+                app:ccp_defaultNameCode="NL"
                 app:ccp_hintExampleNumberType="MOBILE"
                 app:ccp_showFullName="true" />
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/login_phone_number"
@@ -120,14 +123,14 @@
                     android:textColor="@color/black" />
 
 
-<!--                <Button-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:layout_alignParentRight="true"-->
-<!--                    android:background="#00000000"-->
-<!--                    android:fontFamily="@font/brandon_med"-->
-<!--                    android:text="@string/forget_password" />-->
+                <!--                <Button-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_alignParentEnd="true"-->
+                <!--                    android:layout_alignParentRight="true"-->
+                <!--                    android:background="#00000000"-->
+                <!--                    android:fontFamily="@font/brandon_med"-->
+                <!--                    android:text="@string/forget_password" />-->
 
             </RelativeLayout>
 
@@ -145,8 +148,6 @@
 
             <Button
                 android:id="@+id/signup_btn"
-                android:onClick="callSignUpScreen"
-                android:transitionName="transition_sigun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/letTheUserLogIn"
@@ -154,7 +155,9 @@
                 android:layout_marginTop="20dp"
                 android:background="#00000000"
                 android:fontFamily="@font/brandon_med"
-                android:text="@string/create_account" />
+                android:onClick="callSignUpScreen"
+                android:text="@string/create_account"
+                android:transitionName="transition_sigun" />
 
 
             <RelativeLayout

@@ -22,6 +22,8 @@ public class SignUp3rdClass extends AppCompatActivity {
     ScrollView scrollView;
     TextInputLayout phoneNumber;
     CountryCodePicker countryCodePicker;
+    Button login;
+    ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,8 @@ public class SignUp3rdClass extends AppCompatActivity {
         scrollView = findViewById(R.id.signup_3rd_screen_scroll_view);
         countryCodePicker = findViewById(R.id.country_code_picker);
         phoneNumber = findViewById(R.id.signup_phone_number);
+        login = findViewById(R.id.signup_login_btn);
+        backBtn = findViewById(R.id.signup_back_button);
 
     }
 
@@ -93,5 +97,41 @@ public class SignUp3rdClass extends AppCompatActivity {
         } else {
             return true;
         }
+    }
+
+    public void callLoginScreen(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[1];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(login, "transition_login");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp3rdClass.this, pairs);
+        startActivity(intent, options.toBundle());
+
+    }
+
+    public void call2ndSignupScreen(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), SignUp2ndClass.class);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[1];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(backBtn, "transition_back_btn");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp3rdClass.this, pairs);
+        startActivity(intent, options.toBundle());
+
     }
 }

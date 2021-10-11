@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -43,6 +44,7 @@ public class Login extends AppCompatActivity {
     CheckBox rememberMe;
     TextInputEditText phoneNumberEditText, passwordEditText;
     Button signup_btn;
+    ImageView backBtn;
 
 
     @Override
@@ -59,6 +61,7 @@ public class Login extends AppCompatActivity {
         phoneNumberEditText = findViewById(R.id.login_phone_number_edit_text);
         passwordEditText = findViewById(R.id.login_password_edit_text);
         signup_btn = findViewById(R.id.signup_btn);
+        backBtn = findViewById(R.id.login_back_button);
 
         //Check whether phone number and password are already stored in shared preferences or not
         SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_REMEMBERME);
@@ -226,5 +229,22 @@ public class Login extends AppCompatActivity {
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this, pairs);
         startActivity(intent, options.toBundle());
 
+    }
+
+    public void callStartUpScreen(View view) {
+
+        Intent intent = new Intent(getApplicationContext(), StartupScreen.class);
+
+        //Add transition
+        //Number of elements we want to animate
+        Pair[] pairs = new Pair[1];
+
+        // View: the element in the xml (image, text, anything..)
+        // String: the name of the transition
+        pairs[0] = new Pair<View, String>(backBtn, "login_back_button_transition");
+
+        //Call the next activity and add the transition to it
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this, pairs);
+        startActivity(intent, options.toBundle());
     }
 }
