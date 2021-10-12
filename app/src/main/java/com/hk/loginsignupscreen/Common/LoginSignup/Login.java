@@ -63,6 +63,9 @@ public class Login extends AppCompatActivity {
         signup_btn = findViewById(R.id.signup_btn);
         backBtn = findViewById(R.id.login_back_button);
 
+        progressbar.setVisibility(View.GONE);
+
+
         //Check whether phone number and password are already stored in shared preferences or not
         SessionManager sessionManager = new SessionManager(Login.this, SessionManager.SESSION_REMEMBERME);
         if (sessionManager.checkRememberMe()) {
@@ -144,12 +147,12 @@ public class Login extends AppCompatActivity {
 
                     } else {
                         progressbar.setVisibility(View.GONE);
-                        Toast.makeText(Login.this, "Het ingevoerde wachtwoord is onjuist!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Het ingevoerde wachtwoord is onjuist!", Toast.LENGTH_LONG).show();
 
                     }
                 } else {
                     progressbar.setVisibility(View.GONE);
-                    Toast.makeText(Login.this, "Geen gebruiker gevonden met deze combinatie van gebruikersnaam en wachtwoord!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Geen gebruiker gevonden met deze combinatie van gebruikersnaam en wachtwoord!", Toast.LENGTH_LONG).show();
 
                 }
             }
@@ -159,11 +162,10 @@ public class Login extends AppCompatActivity {
                 //make the progressbar unvisible when getting an error
                 progressbar.setVisibility(View.GONE);
                 //Show DatabaseError if there is an error
-                Toast.makeText(Login.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, error.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
-
 
     }
 
@@ -178,9 +180,9 @@ public class Login extends AppCompatActivity {
     private void showCustomDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
         // setCancelable(false): so that the user cannot cancel the popup
-        builder.setMessage("Maak a.u.b. verbinding met internet om verder te gaan!")
+        builder.setMessage("Geen internetverbinding, controleer de verbinding en probeer het opnieuw!")
                 .setCancelable(false)
-                .setPositiveButton("Verbinden", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Instellingen", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //open wifi settings
@@ -246,5 +248,7 @@ public class Login extends AppCompatActivity {
         //Call the next activity and add the transition to it
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Login.this, pairs);
         startActivity(intent, options.toBundle());
+
+
     }
 }

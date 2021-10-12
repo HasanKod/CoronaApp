@@ -27,17 +27,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/brandon_blk"
             android:text="@string/login"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp">
+            android:layout_marginTop="10dp">
 
             <com.hbb20.CountryCodePicker
                 android:id="@+id/login_country_code_picker"
@@ -48,7 +48,8 @@
                 android:padding="8dp"
                 app:ccp_defaultNameCode="NL"
                 app:ccp_hintExampleNumberType="MOBILE"
-                app:ccp_showFullName="true" />
+                app:ccp_showFullName="true"
+                android:layout_marginBottom="5dp"/>
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +75,8 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/brandon_reg"
                     android:textColor="@color/black"
-                    android:inputType="phone">
+                    android:inputType="phone"
+                    android:layout_marginBottom="5dp">
 
 
                 </com.google.android.material.textfield.TextInputEditText>
@@ -154,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/letTheUserLogIn"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="#00000000"
                 android:fontFamily="@font/brandon_med"
                 android:onClick="callSignUpScreen"
@@ -167,7 +169,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:background="@drawable/white_circle"
                 android:padding="20dp"
                 android:visibility="invisible">
 
@@ -175,7 +176,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_centerInParent="true"
-                    android:elevation="8dp"/>
+                    android:elevation="8dp" />
 
             </RelativeLayout>
 

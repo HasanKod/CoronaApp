@@ -30,18 +30,18 @@
             android:id="@+id/signup_title_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/brandon_blk"
             android:text="@string/create_account"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="22sp"
             android:transitionName="transition_title_text" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -62,7 +62,8 @@
                 android:padding="8dp"
                 app:ccp_defaultNameCode="NL"
                 app:ccp_hintExampleNumberType="MOBILE"
-                app:ccp_showFullName="true" />
+                app:ccp_showFullName="true"
+                android:layout_marginBottom="5dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/signup_phone_number"
@@ -102,7 +103,6 @@
                 android:id="@+id/signup_next_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:background="@color/colorPrimary"
                 android:elevation="5dp"
                 android:fontFamily="@font/brandon_blk"
@@ -112,18 +112,18 @@
                 android:transitionName="transition_next_btn"
                 tools:ignore="TextContrastCheck" />
 
-            <Button
-                android:id="@+id/signup_login_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="#00000000"
-                android:elevation="5dp"
-                android:fontFamily="@font/brandon_med"
-                android:onClick="callLoginScreen"
-                android:text="@string/login"
-                android:textColor="@color/black"
-                android:transitionName="transition_login_btn" />
+<!--            <Button-->
+<!--                android:id="@+id/signup_login_btn"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="#00000000"-->
+<!--                android:elevation="5dp"-->
+<!--                android:fontFamily="@font/brandon_med"-->
+<!--                android:onClick="callLoginScreen"-->
+<!--                android:text="@string/login"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:transitionName="transition_login_btn" />-->
         </LinearLayout>
     </LinearLayout>
 

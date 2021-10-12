@@ -33,9 +33,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:onClick="callStartUpScreen"
+                    android:onClick="callLoginScreen"
                     android:padding="5dp"
-                    android:src="@drawable/back_arrow_icon"
+                    android:src="@drawable/signout_icon"
                     android:transitionName="transition_back_btn"
                     app:tint="@color/white" />
 
@@ -80,20 +80,19 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="0dp"
                 android:elevation="8dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
                 <org.eazegraph.lib.charts.PieChart
                     android:id="@+id/piechart"
-                    android:layout_width="240dp"
-                    android:layout_height="220dp"
-                    android:layout_marginVertical="20dp"
-                    android:layout_marginTop="50dp"
-                    android:padding="8dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginVertical="25dp"
                     app:egLegendHeight="20dp"
                     app:egLegendTextSize="15sp"
                     app:egUsePieRotation="true"
-                    app:egValueTextColor="@color/black"
-                    app:egValueTextSize="17sp">
+                    app:egValueTextColor="@color/gray"
+                    app:egValueTextSize="12sp">
 
                 </org.eazegraph.lib.charts.PieChart>
 
@@ -101,7 +100,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -254,9 +252,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:columnCount="2"
+            android:elevation="8dp"
             android:padding="5dp"
-            android:useDefaultMargins="true"
-            android:elevation="8dp">
+            android:useDefaultMargins="true">
 
 
             <com.google.android.material.card.MaterialCardView
@@ -278,6 +276,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="18dp"
                         android:orientation="horizontal">
 
 
@@ -321,7 +320,7 @@
                             android:layout_weight="1"
                             android:text="@string/number"
                             android:textColor="@color/black"
-                            android:textSize="15sp"
+                            android:textSize="14sp"
                             android:textStyle="bold">
 
                         </TextView>
@@ -334,7 +333,7 @@
                             android:layout_weight="1"
                             android:text="@string/increment_number"
                             android:textColor="@color/colorPrimaryDark"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textStyle="bold">
 
                         </TextView>
@@ -365,6 +364,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
@@ -410,7 +410,7 @@
                             android:gravity="center"
                             android:text="@string/number"
                             android:textColor="@color/black"
-                            android:textSize="15sp"
+                            android:textSize="14sp"
                             android:textStyle="bold">
 
                         </TextView>
@@ -451,7 +451,8 @@
                             android:layout_height="15dp"
                             android:layout_gravity="center"
                             android:background="@drawable/viewbg"
-                            android:backgroundTint="@color/blue_chart">
+                            android:backgroundTint="@color/blue_chart"
+                            >
 
                         </View>
 
@@ -486,7 +487,7 @@
                             android:layout_weight="1"
                             android:text="@string/number"
                             android:textColor="@color/black"
-                            android:textSize="15sp"
+                            android:textSize="14sp"
                             android:textStyle="bold">
 
                         </TextView>
@@ -499,7 +500,7 @@
                             android:layout_weight="1"
                             android:text="@string/increment_number"
                             android:textColor="@color/blue"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textStyle="bold">
 
                         </TextView>
@@ -532,6 +533,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="8dp"
                         android:orientation="horizontal">
 
 
@@ -575,7 +577,7 @@
                             android:layout_weight="1"
                             android:text="@string/number"
                             android:textColor="@color/black"
-                            android:textSize="15sp"
+                            android:textSize="14sp"
                             android:textStyle="bold">
 
                         </TextView>
@@ -588,7 +590,7 @@
                             android:layout_weight="1"
                             android:text="@string/increment_number"
                             android:textColor="@color/red"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textStyle="bold">
 
                         </TextView>

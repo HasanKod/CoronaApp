@@ -83,14 +83,13 @@ public class SignUp2ndClass extends AppCompatActivity {
 
         //Add transition
         //Number of elements we want to animate
-        Pair[] pairs = new Pair[4];
+        Pair[] pairs = new Pair[3];
 
         // View: the element in the xml (image, text, anything..)
         // String: the name of the transition
         pairs[0] = new Pair<View, String>(backBtn, "transition_back_btn");
         pairs[1] = new Pair<View, String>(next, "transition_next_btn");
-        pairs[2] = new Pair<View, String>(login, "transition_login_btn");
-        pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
+        pairs[2] = new Pair<View, String>(titleText, "transition_title_text");
 
         //Call the next activity and add the transition to it
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2ndClass.this, pairs);
@@ -123,23 +122,23 @@ public class SignUp2ndClass extends AppCompatActivity {
         }
     }
 
-    public void callLoginScreen(View view) {
-
-        Intent intent = new Intent(getApplicationContext(), Login.class);
-
-        //Add transition
-        //Number of elements we want to animate
-        Pair[] pairs = new Pair[1];
-
-        // View: the element in the xml (image, text, anything..)
-        // String: the name of the transition
-        pairs[0] = new Pair<View, String>(login, "transition_login");
-
-        //Call the next activity and add the transition to it
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2ndClass.this, pairs);
-        startActivity(intent, options.toBundle());
-
-    }
+//    public void callLoginScreen(View view) {
+//
+//        Intent intent = new Intent(getApplicationContext(), Login.class);
+//
+//        //Add transition
+//        //Number of elements we want to animate
+//        Pair[] pairs = new Pair[1];
+//
+//        // View: the element in the xml (image, text, anything..)
+//        // String: the name of the transition
+//        pairs[0] = new Pair<View, String>(login, "transition_login");
+//
+//        //Call the next activity and add the transition to it
+//        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SignUp2ndClass.this, pairs);
+//        startActivity(intent, options.toBundle());
+//
+//    }
 
     public void callSignUpScreen(View view) {
         Intent intent = new Intent(getApplicationContext(), SignUp.class);

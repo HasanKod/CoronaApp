@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hbb20.CountryCodePicker;
 import com.hk.loginsignupscreen.Common.Adapter;
@@ -171,7 +172,7 @@ public class Dashboard extends AppCompatActivity implements AdapterView.OnItemSe
         mpiechart.addPieSlice(new PieModel("Confirmed", total, Color.parseColor("#FCC729")));
         mpiechart.addPieSlice(new PieModel("Active", active, Color.parseColor("#27db8a")));
         mpiechart.addPieSlice(new PieModel("Recovered", recovered, Color.parseColor("#2cbedb")));
-        mpiechart.addPieSlice(new PieModel("Deaths", deaths, Color.parseColor("#fcaeee")));
+        mpiechart.addPieSlice(new PieModel("Deaths", deaths, Color.parseColor("#990c2f")));
         mpiechart.setLegendColor(R.color.black);
         mpiechart.startAnimation();
 
@@ -192,9 +193,9 @@ public class Dashboard extends AppCompatActivity implements AdapterView.OnItemSe
 
     }
 
-    public void callStartUpScreen(View view) {
+    public void callLoginScreen(View view) {
 
-        Intent intent = new Intent(getApplicationContext(), StartupScreen.class);
+        Intent intent = new Intent(getApplicationContext(), Login.class);
 
         //Add transition
         //Number of elements we want to animate
@@ -207,6 +208,8 @@ public class Dashboard extends AppCompatActivity implements AdapterView.OnItemSe
         //Call the next activity and add the transition to it
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Dashboard.this, pairs);
         startActivity(intent, options.toBundle());
+        Toast.makeText(Dashboard.this, "U bent uitgelogd!", Toast.LENGTH_SHORT).show();
+
     }
 }
 

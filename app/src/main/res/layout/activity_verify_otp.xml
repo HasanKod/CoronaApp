@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/brandon_med"
             android:includeFontPadding="false"
             android:text="@string/otp_description_text"
@@ -66,16 +66,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:cursorVisible="true"
             android:inputType="number"
             android:itemBackground="@color/lightwhite"
             app:cursorColor="@color/colorPrimary"
             app:hideLineWhenFilled="true"
             app:itemCount="6"
-            app:itemHeight="50dp"
+            app:itemHeight="45dp"
             app:itemRadius="5dp"
-            app:itemWidth="50dp"
+            app:itemWidth="45dp"
             app:lineColor="@color/gray" />
 
         <Button

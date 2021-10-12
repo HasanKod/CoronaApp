@@ -26,20 +26,20 @@
 
         <TextView
             android:id="@+id/signup_title_text"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/brandon_blk"
             android:text="@string/create_account"
             android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="22sp"
             android:transitionName="transition_title_text" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -163,7 +163,7 @@
             android:id="@+id/signup_login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="#00000000"
             android:elevation="5dp"
             android:fontFamily="@font/brandon_med"
