@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Pair;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
@@ -36,6 +35,7 @@ import com.hk.loginsignupscreen.R;
 import java.util.HashMap;
 
 public class Login extends AppCompatActivity {
+
 
     //Variables
     CountryCodePicker countryCodePicker;
@@ -139,7 +139,7 @@ public class Login extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), Dashboard.class));
 
 
-                        Toast.makeText(Login.this, _fullname + "\n" + _email + "\n" + _phoneNo + "\n" + _dateOfBirth, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Welkom terug\t"+_fullname, Toast.LENGTH_SHORT).show();
 
 
                     } else {

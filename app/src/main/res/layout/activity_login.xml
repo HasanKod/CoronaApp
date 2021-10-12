@@ -20,8 +20,9 @@
             android:layout_height="wrap_content"
             android:onClick="callStartUpScreen"
             android:padding="5dp"
-            android:src="@drawable/general_back_icon"
-            android:transitionName="login_back_button_transition" />
+            android:src="@drawable/back_arrow_icon"
+            android:transitionName="login_back_button_transition"
+            app:tint="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -64,7 +65,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
-                app:startIconDrawable="@drawable/phone_number_field_icon"
+                app:startIconDrawable="@drawable/phone_icon"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -72,6 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/brandon_reg"
+                    android:textColor="@color/black"
                     android:inputType="phone">
 
 
@@ -91,7 +93,7 @@
                 app:endIconMode="password_toggle"
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
-                app:startIconDrawable="@drawable/password_field_icon"
+                app:startIconDrawable="@drawable/password_icon"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -173,7 +175,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_centerInParent="true"
-                    android:elevation="8dp" />
+                    android:elevation="8dp"/>
 
             </RelativeLayout>
 

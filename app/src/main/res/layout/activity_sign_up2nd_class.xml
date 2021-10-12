@@ -19,8 +19,9 @@
             android:layout_height="wrap_content"
             android:onClick="callSignUpScreen"
             android:padding="5dp"
-            android:src="@drawable/general_back_icon"
-            android:transitionName="transition_back_btn" />
+            android:src="@drawable/back_arrow_icon"
+            android:transitionName="transition_back_btn"
+            app:tint="@color/black" />
 
 
         <TextView

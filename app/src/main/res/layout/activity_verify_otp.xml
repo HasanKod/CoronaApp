@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:onClick="call3rdSignupScreen"
             android:padding="5dp"
-            android:src="@drawable/general_close_icon"
+            android:src="@drawable/close_icon"
             android:transitionName="close_btn_transition"
             app:tint="@color/black" />
 

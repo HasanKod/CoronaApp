@@ -19,8 +19,9 @@
             android:layout_height="wrap_content"
             android:onClick="callStartUpScreen"
             android:padding="5dp"
-            android:src="@drawable/general_back_icon"
-            android:transitionName="transition_back_btn" />
+            android:src="@drawable/back_arrow_icon"
+            android:transitionName="transition_back_btn"
+            app:tint="@color/black"/>
 
 
         <TextView
@@ -53,7 +54,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
-                app:startIconDrawable="@drawable/full_name_field_icon"
+                app:startIconDrawable="@drawable/full_name_icon"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -78,7 +79,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
-                app:startIconDrawable="@drawable/username_field_icon"
+                app:startIconDrawable="@drawable/username_icon"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -103,7 +104,7 @@
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
-                app:startIconDrawable="@drawable/email_field_icon"
+                app:startIconDrawable="@drawable/email_icon"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -129,7 +130,7 @@
                 app:hintTextColor="@color/black"
                 app:passwordToggleEnabled="true"
                 app:passwordToggleTint="@color/black"
-                app:startIconDrawable="@drawable/password_field_icon"
+                app:startIconDrawable="@drawable/password_icon"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText

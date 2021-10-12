@@ -50,7 +50,6 @@ public class StartupScreen extends AppCompatActivity {
 
     }
 
-
     public void callSignUpScreen(View view) {
 
         Intent intent = new Intent(getApplicationContext(), SignUp.class);
@@ -61,7 +60,7 @@ public class StartupScreen extends AppCompatActivity {
 
         // View: the element in the xml (image, text, anything..)
         // String: the name of the transition
-        pairs[0] = new Pair<View, String>(signup_btn, "transition_login");
+        pairs[0] = new Pair<View, String>(signup_btn, "transition_signup");
 
         //Call the next activity and add the transition to it
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(StartupScreen.this, pairs);

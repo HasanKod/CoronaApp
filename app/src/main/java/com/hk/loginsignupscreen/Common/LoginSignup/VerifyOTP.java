@@ -28,6 +28,7 @@ import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.hk.loginsignupscreen.Common.Dashboard;
 import com.hk.loginsignupscreen.Databases.UserHelperClass;
 import com.hk.loginsignupscreen.R;
 
@@ -121,8 +122,10 @@ public class VerifyOTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-//                            Toast.makeText(VerifyOTP.this, "Verificatie voltooid!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(VerifyOTP.this, "Verificatie voltooid!", Toast.LENGTH_SHORT).show();
                             storeNewUsersData();
+                            startActivity(new Intent(getApplicationContext(), Login.class));
+
                         } else {
                             // Sign in failed, display a message and update the UI
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
