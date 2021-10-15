@@ -59,6 +59,11 @@ public class SignUp3rdClass extends AppCompatActivity {
         //Get phone number
         String _getUserEnteredPhoneNumber = phoneNumber.getEditText().getText().toString().trim();
 
+        //If the user enters 0 at the beginning of the phone number, the 0 will be deleted automatically
+        if (_getUserEnteredPhoneNumber.charAt(0) == '0') {
+            _getUserEnteredPhoneNumber = _getUserEnteredPhoneNumber.substring(1);
+        }
+
         //Add the country code to the phone number
         String _phoneNo = "+" + countryCodePicker.getSelectedCountryCode() + _getUserEnteredPhoneNumber;
 

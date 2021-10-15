@@ -57,7 +57,7 @@ public class Dashboard extends AppCompatActivity implements AdapterView.OnItemSe
     String country;
     TextView mfilter;
     Spinner spinner;
-    String[] types = {"Cases", "Deaths", "Recovered", "Active"};
+    String[] types = {"Gevallen", "Sterfgevallen", "Hersteld", "Actief"};
     private List<ModelClass> modelClassList;
     private List<ModelClass> modelClassList2;
     PieChart mpiechart;

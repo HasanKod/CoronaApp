@@ -71,12 +71,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public void filter(String charText) {
-        if (charText.equals("Cases")) {
+        if (charText.equals("Gevallen")) {
             m = 1;
-        } else if (charText.equals("Recovered")) {
+        } else if (charText.equals("Hersteld")) {
 
             m = 2;
-        } else if (charText.equals("Deaths")) {
+        } else if (charText.equals("Sterfgevallen")) {
 
             m = 3;
         } else {

@@ -110,5 +110,4 @@ public class SessionManager {
         return userSession.getBoolean(IS_REMEMBERME, false);
     }
 
-
 }

@@ -72,6 +72,8 @@ public class Login extends AppCompatActivity {
             HashMap<String, String> rememberMeDetails = sessionManager.getRememberMeDetailsFromSession();
             phoneNumberEditText.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPHONENUMBER));
             passwordEditText.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPASSWORD));
+            rememberMe.setChecked(true);
+
         }
 
     }

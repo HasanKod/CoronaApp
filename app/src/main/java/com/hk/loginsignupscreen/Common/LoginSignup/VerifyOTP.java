@@ -123,14 +123,17 @@ public class VerifyOTP extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(VerifyOTP.this, "Verificatie voltooid!", Toast.LENGTH_SHORT).show();
+
+                            // Store the user data in the database
                             storeNewUsersData();
+
                             startActivity(new Intent(getApplicationContext(), Login.class));
 
                         } else {
                             // Sign in failed, display a message and update the UI
                             if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                                Toast.makeText(VerifyOTP.this, "Verificatie niet voltooid! Probeer het opnieuw!", Toast.LENGTH_SHORT).show();
                                 // The verification code entered was invalid
+                                Toast.makeText(VerifyOTP.this, "Verificatie niet voltooid! Probeer het opnieuw!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
@@ -140,12 +143,14 @@ public class VerifyOTP extends AppCompatActivity {
     private void storeNewUsersData() {
         // Write a message to the database
         FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://covid-19-tracker-2e278-default-rtdb.europe-west1.firebasedatabase.app");
-        //point to the reference "Users" inside the database (reference = table)
+
+        // Point to the reference "Users" inside the database
         DatabaseReference reference = rootNode.getReference("Users");
 
+        // The data of the user we are going to store
         UserHelperClass addNewUser = new UserHelperClass(fullName, email, username, password, date, gender, phoneNo);
 
-        //all the values passed are going to be stored inside the child, whit phone number as id of the user
+        // All the values passed are going to be stored inside the child, with phone number as id of the user
         reference.child(phoneNo).setValue(addNewUser);
     }
 

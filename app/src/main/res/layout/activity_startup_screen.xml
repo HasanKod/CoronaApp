@@ -7,22 +7,26 @@
     android:padding="30dp"
     tools:context=".Common.LoginSignup.StartupScreen">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/start_up_gif"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:src="@drawable/covid" />
 
 
         <TextView
+            android:id="@+id/start_up_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/start_up_gif"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/brandon_blk"
             android:text="@string/login_heading"
             android:textAlignment="center"
@@ -31,8 +35,11 @@
             android:textSize="28sp" />
 
         <TextView
+            android:id="@+id/start_up_under_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/start_up_title"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:fontFamily="@font/brandon_bld"
             android:text="@string/login_tag_line"
@@ -41,9 +48,10 @@
             android:textSize="13sp" />
 
         <LinearLayout
+            android:layout_below="@id/start_up_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="130dp">
 
 
             <Button
@@ -86,5 +94,5 @@
         <!--            android:text="@string/how_does_it_work"-->
         <!--            android:textColor="@color/black"-->
         <!--            tools:ignore="TextContrastCheck" />-->
-    </LinearLayout>
+    </RelativeLayout>
 </ScrollView>
