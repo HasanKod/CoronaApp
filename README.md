@@ -1,3 +1,3 @@
 # CoronaApp
 
-#First update
+#See Covid-19-tracker branch
